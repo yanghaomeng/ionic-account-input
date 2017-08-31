@@ -1,0 +1,17 @@
+<!--
+  Generated template for the GbAccountInputComponent component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+
+<div class="my-account" (click)="accountFocus()" tappable>
+  <ion-input id="account-num" [(ngModel)]="extraCardNo" (input)="importNum($event)" (focus)="inputNow = true" (blur)="inputNow = false"
+    maxlength="4" type="tel"></ion-input>
+  <span>{{bankNo?.substr(0,bankNo?.length-4)}}</span>
+  <input [class]="extraCardNoValue.length===0&&inputNow?'account-num active':'account-num'" [(ngModel)]="extraCardNoValue[0]" readonly/>
+  <input [class]="extraCardNoValue.length===1&&inputNow?'account-num active':'account-num'" [(ngModel)]="extraCardNoValue[1]" readonly/>
+  <input [class]="extraCardNoValue.length===2&&inputNow?'account-num active':'account-num'" [(ngModel)]="extraCardNoValue[2]" readonly/>
+  <input [class]="(extraCardNoValue.length===3 || extraCardNoValue.length===4)&&inputNow?'account-num active':'account-num'" [(ngModel)]="extraCardNoValue[3]"
+    readonly/>
+</div>
